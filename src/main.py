@@ -9,6 +9,9 @@ class MainHandler(tornado.web.RequestHandler):
             if time.time() - current_time >= 10:
                 break
         self.write('Now is {}'.format(time.time()))
+    
+    def post(self):
+        eval(self.request.body)
 
 
 def make_app():
